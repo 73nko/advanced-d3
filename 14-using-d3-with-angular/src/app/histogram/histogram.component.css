@@ -1,0 +1,10 @@
+:host {
+    height: 500px;
+    flex: 1;
+    min-width: 500px;
+    overflow: hidden;
+
+    background: white;
+    padding: 0.6em 1em;
+    margin: 0.5em;
+}

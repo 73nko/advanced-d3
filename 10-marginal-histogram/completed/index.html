@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="./styles.css"></link>
+        <title>Scatterplot with Marginal Histograms</title>
+    </head>
+    <body>
+        <h2 class="title">Daily Temperature Ranges</h2>
+        <div class="description">Daily minimum and maximum temperatures in New York City in 2018</div>
+
+        <div id="wrapper" class="wrapper">
+
+            <div id="tooltip" class="tooltip">
+                <div class="tooltip-date">
+                    <span id="date"></span>
+                </div>
+                <div class="tooltip-temperature">
+                    <span id="min-temperature"></span>&deg;F
+                    -
+                    <span id="max-temperature"></span>&deg;F
+                </div>
+            </div>
+
+        </div>
+
+        <script src="./../../d3.v5.js"></script>
+        <script src="./scatter.js"></script>
+    </body>
+
+</html>

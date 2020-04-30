@@ -1,0 +1,18 @@
+
+/* scatter plot styles */
+.x-axis-label {
+    fill: black;
+    font-size: 1.4em;
+    text-transform: capitalize;
+}
+
+.y-axis-label {
+    fill: black;
+    font-size: 1.4em;
+    text-anchor: middle;
+    transform: rotate(-90deg);
+}
+
+circle {
+    fill: cornflowerblue;
+}

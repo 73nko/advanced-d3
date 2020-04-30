@@ -1,0 +1,10 @@
+:host {
+    height: 300px;
+    min-width: 500px;
+    width: calc(100% + 1em);
+    margin-bottom: 2em;
+
+    background: white;
+    padding: 0.6em 1em;
+    margin: 0.5em;
+}

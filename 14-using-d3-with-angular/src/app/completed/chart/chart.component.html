@@ -1,0 +1,11 @@
+<svg [attr.height]="dimensions.height" [attr.width]="dimensions.width">
+  <svg:g [style.transform]="[
+    'translate(',
+    dimensions.marginLeft,
+    'px, ',
+    dimensions.marginTop,
+    'px)'
+  ].join('')">
+    <ng-content></ng-content>
+  </svg:g>
+</svg>

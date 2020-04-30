@@ -1,0 +1,25 @@
+line {
+    stroke: #bdc3c7;
+}
+
+.label {
+    text-anchor: middle;
+    font-size: 0.8em;
+    letter-spacing: 0.01em;
+    fill: #95a5a6;
+}
+
+.tick {
+    font-size: 0.9em;
+    transition: all 0.3s ease-out;
+    fill: #95a5a6;
+}
+
+.x .tick {
+    text-anchor: middle;
+}
+
+.y .tick {
+    dominant-baseline: middle;
+    text-anchor: end;
+}

@@ -1,0 +1,20 @@
+{
+  "basic": [
+    "01-making-your-first-chart",
+    "02-making-a-scatterplot",
+    "03-making-a-bar-chart",
+    "04-animations-and-transitions",
+    "05-interactions",
+    "06-making-a-map",
+    "07-data-visualization-basics",
+    "08-common-charts",
+    "09-dashboard-design",
+    "Inter.var.woff2",
+    "d3.v5.js",
+    "favicon.ico",
+    "get_weather_data.py",
+    "my_weather_data.json",
+    "nyc_weather_data.json"
+  ],
+  "advanced": "all"
+}

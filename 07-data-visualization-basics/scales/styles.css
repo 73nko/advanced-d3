@@ -1,0 +1,20 @@
+body {
+    display: flex;
+    padding: 2em;
+    font-family: sans-serif;
+}
+
+.contents {
+    display: flex;
+    align-items: flex-start;
+}
+
+.scale-type {
+    margin: 0 1em;
+    font-size: 0.8em;
+    line-height: 1.6em;
+}
+
+svg {
+    margin-bottom: 0.8em;
+}

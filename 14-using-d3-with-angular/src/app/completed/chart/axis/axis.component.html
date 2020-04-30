@@ -1,0 +1,43 @@
+<svg:g
+  *ngIf="dimension == 'x'"
+  class="x"
+  attr.transform="translate(0, {{dimensions.boundedHeight}})">
+  <svg:line
+    [attr.x2]="dimensions.boundedWidth">
+  </svg:line>
+  <svg:text
+      *ngFor="let tick of ticks"
+      class="tick"
+      attr.transform="translate({{scale(tick)}}, 25)">
+    {{ formatTick(tick) }}
+  </svg:text>
+  <svg:text
+    *ngIf="label"
+    class="label"
+    attr.transform="translate({{dimensions.boundedWidth / 2}}, 60)">
+    {{ label }}
+  </svg:text>
+</svg:g>
+<svg:g
+  class="y"
+  *ngIf="dimension == 'y'">
+  <svg:line
+    [attr.y2]="dimensions.boundedHeight">
+  </svg:line>
+  <svg:text
+      *ngFor="let tick of ticks"
+      class="tick"
+      attr.transform="translate(-16, {{scale(tick)}})">
+    {{ formatTick(tick) }}
+  </svg:text>
+  <svg:text
+    *ngIf="label"
+    class="label"
+    [ngStyle]="{transform: [
+      'translate(-56px, ',
+      dimensions.boundedHeight / 2,
+      'px) rotate(-90deg)'
+    ].join('')}">
+    {{ label }}
+  </svg:text>
+</svg:g>

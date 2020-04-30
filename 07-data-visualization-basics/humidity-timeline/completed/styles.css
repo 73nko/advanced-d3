@@ -1,0 +1,100 @@
+@font-face {
+    font-family: 'Inter var';
+    src: url('./../../../Inter.var.woff2');
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5em 2em;
+    letter-spacing: -0.011em;
+    font-family: 'Inter var', sans-serif;
+    font-size: 16px;
+    color: #34495e;
+    background: #f8f9fa;
+}
+
+svg {
+    stroke-linecap: round;
+    overflow: visible;
+}
+
+.line {
+    fill: none;
+    stroke: #34495e;
+    stroke-width: 2;
+    /* fill: #34495e; */
+}
+
+.area {
+    fill: #34495e;
+    fill-opacity: 0.3;
+}
+
+.dot {
+    fill: #8395a7;
+}
+
+.y-axis line,
+.y-axis .domain {
+    display: none;
+}
+.y-axis .tick {
+    fill: #34495e;
+    font-size: 1.6em;
+}
+
+.y-axis-label-suffix {
+    fill: #34495e;
+    text-anchor: start;
+}
+
+.y-axis-label-mean {
+    text-anchor: end;
+    font-size: 0.8em;
+    opacity: 0.5;
+}
+
+.y-axis-tick {
+    stroke: #c8d6e5;
+    stroke-width: 1px;
+}
+
+.season-mean {
+    stroke: #8395a7;
+    stroke-width: 2px;
+}
+
+.y-axis-label-2 {
+    fill: #34495e;
+    font-size: 0.9em;
+    font-size: 1.4em;
+    dominant-baseline: middle;
+    text-anchor: middle;
+    transform: rotate(-90deg);
+}
+
+.season-mean-label {
+    fill: #34495e;
+    text-anchor: end;
+    dominant-baseline: middle;
+    font-size: 0.8em;
+    opacity: 0.5;
+}
+
+.season-mean-background {
+    fill: #f8f9fa;
+}
+
+.season-label {
+    font-size: 1.1em;
+    fill: #34495e;
+    text-anchor: middle;
+}
+
+.season {
+    fill: #fff;
+}
+.season.Winter { fill: #2e86de; fill-opacity: 0.1; }
+.season.Summer { fill: #10ac84; fill-opacity: 0.1; }

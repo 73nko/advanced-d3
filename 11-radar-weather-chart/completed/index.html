@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="./styles.css" type="text/css"></link>
+
+        <title>New York City Weather in 2018</title>
+    </head>
+    <body>
+        <h2 class="title">
+            New York City Weather in 2018
+        </h2>
+
+        <div id="wrapper" class="wrapper">
+
+        <div id="tooltip" class="tooltip">
+            <div id="tooltip-date" class="tooltip-date"></div>
+            <div id="tooltip-temperature" class="tooltip-temperature">
+                <span id="tooltip-temperature-min"></span>
+                -
+                <span id="tooltip-temperature-max"></span>
+            </div>
+            <div class="tooltip-metric tooltip-uv">
+                <div>UV Index</div>
+                <div id="tooltip-uv"></div>
+            </div>
+            <div class="tooltip-metric tooltip-cloud">
+                <div>Cloud Cover</div>
+                <div id="tooltip-cloud"></div>
+            </div>
+            <div class="tooltip-metric tooltip-precipitation">
+                <div>Precipitation Probability</div>
+                <div id="tooltip-precipitation"></div>
+            </div>
+            <div class="tooltip-metric tooltip-precipitation-type">
+                <div>Precipitation Type</div>
+                <div id="tooltip-precipitation-type"></div>
+            </div>
+        </div>
+
+        <script src="./../../d3.v5.js"></script>
+        <script src="./chart.js"></script>
+    </body>
+
+</html>

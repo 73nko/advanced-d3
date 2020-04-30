@@ -1,0 +1,25 @@
+<div class="App">
+    <h1>Weather Dashboard</h1>
+
+    <div class="charts">
+        <app-timeline
+            [data]="timelineData"
+            [xAccessor]="dateAccessor"
+            [yAccessor]="temperatureAccessor"
+            label="Temperature">
+        </app-timeline>
+        <app-scatter
+            [data]="scatterData"
+            [xAccessor]="humidityAccessor"
+            [yAccessor]="temperatureAccessor"
+            xLabel="Humidity"
+            yLabel="Temperature">
+        </app-scatter>
+        <app-histogram
+            [data]="scatterData"
+            [xAccessor]="humidityAccessor"
+            label="Humidity">
+        </app-histogram>
+    </div>
+</div>
+

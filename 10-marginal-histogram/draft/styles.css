@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'Inter var';
+    src: url('./../../Inter.var.woff2');
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em 2em;
+    letter-spacing: -0.011em;
+    font-family: 'Inter var', sans-serif;
+    font-size: 16px;
+    color: #34495e;
+    background: #f8f9fa;
+}
+
+svg text {
+    fill: #34495e;
+}
+
+.wrapper {
+    position: relative;
+}
+
+.x-axis-label {
+    font-size: 1.4em;
+}
+
+.y-axis-label {
+    font-size: 1.4em;
+    text-anchor: middle;
+    transform: rotate(-90deg);
+}
+
+circle {
+    fill: cornflowerblue;
+}

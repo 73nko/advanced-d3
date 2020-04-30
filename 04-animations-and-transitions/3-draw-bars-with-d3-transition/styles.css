@@ -1,0 +1,58 @@
+.bin rect {
+    fill: cornflowerblue;
+}
+.bin text {
+    text-anchor: middle;
+    fill: darkgrey;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+.mean {
+    stroke: maroon;
+    stroke-dasharray: 2px 4px;
+}
+
+.x-axis-label {
+    fill: black;
+    font-size: 1.4em;
+    text-transform: capitalize;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2em;
+}
+
+button {
+    font-size: 1.2em;
+    margin-left: 1em;
+    padding: 0.5em 1em;
+    appearance: none;
+    -webkit-appearance: none;
+    background:darkseagreen;
+    color: white;
+    border: none;
+    box-shadow: 0 5px 0 0 seagreen;
+    border-radius: 6px;
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.1s ease-out;
+}
+
+button:hover,
+button:focus {
+    background: #73b173;
+    box-shadow: 0 4px 0 0 seagreen;
+    transform: translateY(1px);
+}
+
+button:hover:active,
+button:focus:active,
+button:active {
+    box-shadow: 0 1px 0 0 seagreen;
+    transform: translateY(4px);
+}

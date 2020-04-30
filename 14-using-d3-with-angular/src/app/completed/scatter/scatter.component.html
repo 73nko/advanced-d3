@@ -1,0 +1,23 @@
+<div #container>
+  <app-chart
+    [dimensions]="dimensions">
+    <svg:g appAxis
+      dimension="x"
+      [dimensions]="dimensions"
+      [scale]="xScale"
+      [label]="xLabel">
+    </svg:g>
+    <svg:g appAxis
+      dimension="y"
+      [dimensions]="dimensions"
+      [scale]="yScale"
+      [label]="yLabel">
+    </svg:g>
+    <svg:g appCircles
+      [data]="data"
+      [keyAccessor]="keyAccessor"
+      [xAccessor]="xAccessorScaled"
+      [yAccessor]="yAccessorScaled">
+    </svg:g>
+  </app-chart>
+</div>

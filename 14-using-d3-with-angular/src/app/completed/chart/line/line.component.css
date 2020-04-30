@@ -1,0 +1,15 @@
+path {
+    transition: all 0.3s ease-out;
+}
+
+.line {
+    fill: none;
+    stroke: #9980FA;
+    stroke-width: 3px;
+    stroke-linecap: round;
+}
+
+.area {
+    fill: rgba(152, 128, 250, 0.185);
+    stroke-width: 0;
+}

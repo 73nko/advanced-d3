@@ -1,0 +1,10 @@
+:host {
+    width: 100%;
+}
+
+.charts {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: -0.5em;
+}

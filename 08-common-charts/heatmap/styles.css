@@ -1,0 +1,107 @@
+@font-face {
+    font-family: 'Inter var';
+    src: url('./../../Inter.var.woff2');
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+    letter-spacing: -0.011em;
+    font-family: 'Inter var', sans-serif;
+    font-size: 16px;
+    color: #34495e;
+    background: #f8f9fa;
+}
+
+svg {
+    shape-rendering: crispedges;
+}
+
+.day {
+    transition: fill 0.3s ease-out;
+}
+
+.label {
+    text-anchor: end;
+    dominant-baseline: middle;
+    font-size: 0.8em;
+    fill: #7f8c8d;
+}
+
+.month {
+    font-size: 0.8em;
+    fill: #7f8c8d;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 5em);
+    padding-bottom: 0.3em;
+}
+
+h2 {
+    padding-left: 78px;
+}
+
+.metric {
+    width: 8em;
+}
+
+button {
+    font-size: 1.2em;
+    margin-left: 1em;
+    margin-right: 50px;
+    padding: 0.5em 1em;
+    appearance: none;
+    -webkit-appearance: none;
+    background:darkseagreen;
+    color: white;
+    border: none;
+    box-shadow: 0 5px 0 0 seagreen;
+    border-radius: 6px;
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.1s ease-out;
+}
+
+button:hover,
+button:focus {
+    background: #73b173;
+    box-shadow: 0 4px 0 0 seagreen;
+    transform: translateY(1px);
+}
+
+button:hover:active,
+button:focus:active,
+button:active {
+    box-shadow: 0 1px 0 0 seagreen;
+    transform: translateY(4px);
+}
+
+.legend {
+    margin-top: 0.3em;
+    margin-right: auto;
+    width: 16em;
+    display: flex;
+    align-items: center;
+}
+
+.legend-text {
+    width: 3em;
+    font-feature-settings: 'tnum' 1;
+}
+
+.legend-text:first-of-type {
+    text-align: right;
+}
+
+.legend-gradient {
+    height: 1em;
+    flex: 1;
+    margin: 0 0.6em;
+}
