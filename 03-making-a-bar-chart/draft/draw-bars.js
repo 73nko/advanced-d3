@@ -2,6 +2,7 @@ async function drawBars() {
   // 1. Access data
   const dataset = await d3.json("../../my_weather_data.json");
   const metricAccessor = ({ humidity }) => humidity;
+  const yAccessor = ({ length }) => length;
 
   // 2. Set dimensions
   const width = 600;
@@ -35,5 +36,92 @@ async function drawBars() {
       "transform",
       `translate(${dimensions.margin.left}px, ${dimensions.margin.top}px)`
     );
+
+  // 4. Create scales
+  const xScale = d3
+    .scaleLinear()
+    .domain(d3.extent(dataset, metricAccessor))
+    .range([0, dimensions.boundedWidth])
+    .nice();
+
+  //// Create a bin
+  const binsGenerator = d3
+    .histogram()
+    .domain(xScale.domain())
+    .value(metricAccessor)
+    .thresholds(12);
+
+  const bins = binsGenerator(dataset);
+
+  //// Create the yScale
+  const barPadding = 1;
+  const yScale = d3
+    .scaleLinear()
+    .domain([0, d3.max(bins, yAccessor)])
+    .range([dimensions.boundedHeight, 0])
+    .nice();
+
+  // 5. Draw data
+  const binGroups = bounds
+    .append("g")
+    .selectAll("g")
+    .data(bins)
+    .enter()
+    .append("g");
+
+  const barRects = binGroups
+    .append("rect")
+    .attr("x", (d) => xScale(d.x0) + barPadding / 2)
+    .attr("y", (d) => yScale(yAccessor(d)))
+    .attr("width", (d) => d3.max([0, xScale(d.x1) - xScale(d.x0) - barPadding]))
+    .attr("height", (d) => dimensions.boundedHeight - yScale(yAccessor(d)))
+    .attr("fill", "cornflowerblue");
+
+  // 6. Adding Labels
+  const barText = binGroups
+    .filter(yAccessor)
+    .append("text")
+    .attr("x", (d) => xScale(d.x0) + (xScale(d.x1) - xScale(d.x0)) / 2)
+    .attr("y", (d) => yScale(yAccessor(d)) - 5)
+    .text(yAccessor)
+    .style("text-anchor", "middle")
+    .style("font-size", "12px")
+    .style("font-family", "sans-serif")
+    .style("color", "darkgrey");
+
+  //// Calculate the mean
+  const mean = d3.mean(dataset, metricAccessor);
+  const meanLine = bounds
+    .append("line")
+    .attr("x1", xScale(mean))
+    .attr("x2", xScale(mean))
+    .attr("y1", -15)
+    .attr("y2", dimensions.boundedHeight)
+    .attr("stroke", "maroon")
+    .attr("stroke-dasharray", "2px 4px");
+
+  const meanLabel = bounds
+    .append("text")
+    .attr("x", xScale(mean))
+    .attr("y", -20)
+    .text("mean")
+    .attr("fill", "maroon")
+    .style("font-size", "12px")
+    .style("text-anchor", "middle");
+
+  // 7. Draw Peripherals
+  const xAxisGenerator = d3.axisBottom().scale(xScale);
+  const xAxis = bounds
+    .append("g")
+    .call(xAxisGenerator)
+    .style("transform", `translateY(${dimensions.boundedHeight}px)`);
+
+  const xAxisLabel = xAxis
+    .append("text")
+    .attr("x", dimensions.boundedWidth / 2)
+    .attr("y", dimensions.margin.bottom - 10)
+    .attr("fill", "darkgrey")
+    .style("font-size", "1.4em")
+    .text("Humidity");
 }
 drawBars();
