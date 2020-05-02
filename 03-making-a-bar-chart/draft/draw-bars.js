@@ -26,7 +26,9 @@ function drawHistogram(metric, dataset) {
     .select("#wrapper")
     .append("svg")
     .attr("width", dimensions.width)
-    .attr("height", dimensions.height);
+    .attr("height", dimensions.height)
+    .attr("role", "figure")
+    .attr("tabindex", "0");
 
   const bounds = wrapper
     .append("g")
@@ -65,7 +67,10 @@ function drawHistogram(metric, dataset) {
     .selectAll("g")
     .data(bins)
     .enter()
-    .append("g");
+    .append("g")
+    .attr("tabindex", "0")
+    .attr("role", "list")
+    .attr("aria-label", "histogram bars");
 
   const barRects = binGroups
     .append("rect")
