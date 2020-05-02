@@ -1,11 +1,9 @@
-async function drawBars() {
-  // 1. Access data
-  const dataset = await d3.json("../../my_weather_data.json");
-  const metricAccessor = ({ humidity }) => humidity;
+function drawHistogram(metric, dataset) {
+  const metricAccessor = (d) => d[metric];
   const yAccessor = ({ length }) => length;
 
   // 2. Set dimensions
-  const width = 600;
+  const width = 500;
   const dimensions = {
     width: width,
     height: width * 0.6,
@@ -122,6 +120,22 @@ async function drawBars() {
     .attr("y", dimensions.margin.bottom - 10)
     .attr("fill", "darkgrey")
     .style("font-size", "1.4em")
-    .text("Humidity");
+    .text(metric)
+    .style("text-transform", "capitalize");
+}
+
+async function drawBars() {
+  const dataset = await d3.json("../../my_weather_data.json");
+  const metrics = [
+    "windSpeed",
+    "moonPhase",
+    "dewPoint",
+    "humidity",
+    "uvIndex",
+    "windBearing",
+    "temperatureMin",
+    "temperatureMax",
+  ];
+  metrics.forEach((metric) => drawHistogram(metric, dataset));
 }
 drawBars();

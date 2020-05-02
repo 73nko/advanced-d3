@@ -1,20 +1,24 @@
 @font-face {
-    font-family: 'Inter var';
-    src: url('./../../Inter.var.woff2');
+  font-family: "Inter var";
+  src: url("./../../Inter.var.woff2");
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2em;
-    letter-spacing: -0.011em;
-    font-family: 'Inter var', sans-serif;
-    font-size: 16px;
-    color: #34495e;
-    background: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+  letter-spacing: -0.011em;
+  font-family: "Inter var", sans-serif;
+  font-size: 16px;
+  color: #34495e;
+  background: #f8f9fa;
+}
+
+#wrapper svg {
+  margin-bottom: 2em;
 }
 
 svg {
-    fill: #34495e;
+  fill: #34495e;
 }
